@@ -39,6 +39,16 @@
                 <option value="1.725">高い (ジムの筋トレを週4～5回程度行う高強度の運動)</option>
             </select>
         </div>
+        <div class="input-group">
+            <label for="goal">目的</label>
+            <select id="goal">
+                <option value="loss_hard">減量 (-500kcal)</option>
+                <option value="loss_mild">ゆるやかな減量 (-250kcal)</option>
+                <option value="maintenance" selected>維持</option>
+                <option value="gain_mild">ゆるやかな増量 (+250kcal)</option>
+                <option value="gain_hard">増量 (+500kcal)</option>
+            </select>
+        </div>
         <button id="calculate-btn">計算する</button>
         <div id="result" class="result-display">
             <div class="result-item">
@@ -49,6 +59,12 @@
             <div class="result-item">
                 <p>あなたの1日の推定消費カロリー (TDEE)</p>
                 <h2 id="tdee-result"></h2>
+            </div>
+        </div>
+        <div id="goal-result" class="result-display" style="margin-top: 1rem;">
+            <div class="result-item">
+                <p>目標摂取カロリー</p>
+                <h2 id="target-calorie-result"></h2>
             </div>
         </div>
     </div>
