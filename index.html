@@ -42,11 +42,11 @@
         <div class="input-group">
             <label for="goal">目的</label>
             <select id="goal">
-                <option value="loss_hard">減量 (-500kcal)</option>
-                <option value="loss_mild">ゆるやかな減量 (-250kcal)</option>
-                <option value="maintenance" selected>維持</option>
-                <option value="gain_mild">ゆるやかな増量 (+250kcal)</option>
-                <option value="gain_hard">増量 (+500kcal)</option>
+                <option value="loss_hard">頑張って痩せたい（月3〜4kgペース）(-500kcal)</option>
+                <option value="loss_mild">緩やかに痩せたい（月2〜3kgペース）(-300kcal)</option>
+                <option value="maintenance" selected>体型を維持したい(0kcal)</option>
+                <option value="gain_mild">緩やかに太りたい（月2〜3kgペース）(+300kcal)</option>
+                <option value="gain_hard">頑張って太りたい（月3〜4kgペース）(+500kcal)</option>
             </select>
         </div>
         <button id="calculate-btn">計算する</button>
@@ -57,7 +57,7 @@
             </div>
             <div class="result-item-separator"></div>
             <div class="result-item">
-                <p>あなたの1日の推定消費カロリー (TDEE)</p>
+                <p>あなたの1日の<br>推定消費カロリー (TDEE)</p>
                 <h2 id="tdee-result"></h2>
             </div>
         </div>
@@ -65,6 +65,23 @@
             <div class="result-item">
                 <p>目標摂取カロリー</p>
                 <h2 id="target-calorie-result"></h2>
+                <p id="calorie-warning" class="warning"></p>
+            </div>
+        </div>
+        <div id="pfc-result" class="result-display" style="margin-top: 1rem;">
+            <div class="result-item">
+                <p>タンパク質 (P)</p>
+                <h2 id="protein-result"></h2>
+            </div>
+            <div class="result-item-separator"></div>
+            <div class="result-item">
+                <p>脂質 (F)</p>
+                <h2 id="fat-result"></h2>
+            </div>
+            <div class="result-item-separator"></div>
+            <div class="result-item">
+                <p>炭水化物 (C)</p>
+                <h2 id="carbohydrate-result"></h2>
             </div>
         </div>
     </div>

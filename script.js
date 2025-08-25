@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetCalories -= 500;
                 break;
             case 'loss_mild':
-                targetCalories -= 250;
+                targetCalories -= 300;
                 break;
             case 'gain_mild':
-                targetCalories += 250;
+                targetCalories += 300;
                 break;
             case 'gain_hard':
                 targetCalories += 500;
@@ -66,5 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         targetCalorieResultH2.textContent = `${targetCalories} kcal`;
         goalResultDiv.style.display = 'flex';
+
+        // Show warning if target calories are below BMR
+        const calorieWarning = document.getElementById('calorie-warning');
+        if (targetCalories < bmr) {
+            calorieWarning.innerHTML = '警告: 目標摂取カロリーが基礎代謝量を下回っています。<br>代謝が低下し、痩せにくくなる可能性があります。';
+        } else {
+            calorieWarning.innerHTML = '';
+        }
+
+        // Calculate and display PFC balance
+        const protein = Math.round((targetCalories * 0.3) / 4);
+        const fat = Math.round((targetCalories * 0.2) / 9);
+        const carbohydrate = Math.round((targetCalories * 0.5) / 4);
+
+        const pfcResultDiv = document.getElementById('pfc-result');
+        const proteinResultH2 = document.getElementById('protein-result');
+        const fatResultH2 = document.getElementById('fat-result');
+        const carbohydrateResultH2 = document.getElementById('carbohydrate-result');
+
+        proteinResultH2.textContent = `${protein} g`;
+        fatResultH2.textContent = `${fat} g`;
+        carbohydrateResultH2.textContent = `${carbohydrate} g`;
+        pfcResultDiv.style.display = 'flex';
     });
 });
