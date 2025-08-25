@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show warning if target calories are below BMR
         const calorieWarning = document.getElementById('calorie-warning');
         if (targetCalories < bmr) {
-            calorieWarning.innerHTML = '警告: 目標摂取カロリーが基礎代謝量を下回っています。<br>代謝が低下し、痩せにくくなる可能性があります。';
+            calorieWarning.innerHTML = '目標摂取カロリーが基礎代謝量を下回っています。<br>代謝が低下し、痩せにくくなる可能性があります。';
         } else {
             calorieWarning.innerHTML = '';
         }
